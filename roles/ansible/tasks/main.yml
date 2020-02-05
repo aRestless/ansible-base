@@ -1,0 +1,14 @@
+---
+- name: Install Pip
+  become: yes
+  package:
+    name: python-pip
+    state: present
+
+- name: Install Ansible
+  become: yes
+  pip:
+    name:
+      - ansible
+      - pywinrm
+    state: present
