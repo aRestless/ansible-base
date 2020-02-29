@@ -5,10 +5,16 @@
     name: python-pip
     state: present
 
-- name: Install Ansible
+- name: Install Ansible with Pip
   become: yes
   pip:
     name:
       - ansible
       - pywinrm
     state: present
+
+- name: Remove Ansible package
+  become: yes
+  package:
+    name: ansible
+    state: absent
